@@ -16,7 +16,7 @@ function Signup() {
       return;
     }
     axios
-      .post('http://localhost:5002/user/signup', { email, password }) // Replace with actual API URL
+      .post('https://workout-gym.onrender.com/user/signup', { email, password }) // Replace with actual API URL
       .then(() => {
         enqueueSnackbar('Sign Up successful!', { variant: 'success' });
         navigate('/');

@@ -18,7 +18,7 @@ function Login() {
     }
     
     axios
-      .post('http://localhost:5002/user/login', { email, password }) // Adjust the endpoint as needed
+      .post('https://workout-gym.onrender.com/user/login', { email, password }) // Adjust the endpoint as needed
       .then((response) => {
         const { email, token, userId } = response.data;
         console.log(response.data)

@@ -2,24 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { format } from 'date-fns'; // Import date-fns for formatting
 
 function Home() {
-  const [gyms, setGyms] = useState([]); // To store the workouts
-  const [title, setTitle] = useState(''); // Form state for workout title
-  const [load, setLoad] = useState(''); // Form state for load
-  const [reps, setReps] = useState(''); // Form state for reps
-  const [error, setError] = useState(''); // Error message for validation
+  const [gyms, setGyms] = useState([]); 
+  const [title, setTitle] = useState(''); 
+  const [load, setLoad] = useState(''); 
+  const [reps, setReps] = useState(''); 
+  const [error, setError] = useState(''); 
   const navigate = useNavigate();
 
   // Fetch user's workouts from the backend
   useEffect(() => {
     const userId = localStorage.getItem('userId');
     axios
-      .get(`http://localhost:5002/gym/gyms/${userId}`)
+      .get(`https://workout-gym.onrender.com/gym/gyms/${userId}`)
       .then((response) => {
-        console.log(response,"99999999999999999999999999999999999")
-        setGyms(response.data); // Update the workouts list
+        setGyms(response.data); 
       })
       .catch((error) => {
         console.error('Error fetching workouts:', error);
@@ -48,7 +46,7 @@ function Home() {
      };
 
     axios
-      .post(' http://localhost:5002/gym/', newWorkout)
+      .post(' https://workout-gym.onrender.com/gym/', newWorkout)
       .then((response) => {
         setGyms((prevGyms) => [response.data, ...prevGyms]); // Add the new workout to the list
         setTitle('');
@@ -63,9 +61,9 @@ function Home() {
 
   const handleDeleteWorkout = (id) => {
     axios
-      .delete(`http://localhost:5002/gym/delete/${id}`)
+      .delete(`https://workout-gym.onrender.com/gym/delete/${id}`)
       .then(() => {
-        setGyms((prevGyms) => prevGyms.filter((gym) => gym._id !== id)); // Remove the deleted workout
+        setGyms((prevGyms) => prevGyms.filter((gym) => gym._id !== id)); 
       })
       .catch((error) => {
         console.error('Error deleting workout:', error);
