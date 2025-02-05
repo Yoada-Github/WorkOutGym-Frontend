@@ -1,0 +1,31 @@
+/* body{
+  background-color: #f0f8ff97;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.main{
+  background-color: white;
+  padding: 20px;
+}
+.gym{
+  display: flex;
+  justify-content: space-between;
+}
+.account{
+  display: flex;
+  padding: 10px;
+  margin-right: 10px;
+  color: rgb(246, 240, 240);
+}
+.h3{
+  padding-right: 10px;
+}
+.submit{
+  border: 1px solid ;
+  justify-content: center;
+  padding: 30px;
+  margin: 40px;
+  max-width: 400px;
+  max-height: 400px;
+} */
